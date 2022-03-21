@@ -1,19 +1,14 @@
 import styled from "styled-components";
 
-const Container = styled.div`
-  margin: 0;
-`;
-
 const Circle = styled.div`
-  position: relative;
-  padding-bottom: 1em;
+  position: fixed;
   overflow: hidden;
+  z-index: 2;
+  bottom: -4em;
+  right: -4em;
 
   svg {
-    /* position: absolute; */
-    /* left: 0;
-    top: 0; */
-    /* width: 100%; */
+    color: #4f6eb0;
     height: 30rem;
     width: 30rem;
 
@@ -83,37 +78,35 @@ const Circle = styled.div`
 
 export default function Rotate() {
   return (
-    <Container>
-      <Circle>
-        <svg
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          x="0px"
-          y="0px"
-          width="150px"
-          height="150px"
-          viewBox="0 0 300 300"
-          enableBackground="new 0 0 300 300"
-          xmlSpace="preserve"
-        >
-          <defs>
-            <path
-              id="circlePath"
-              d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
-            />
-          </defs>
-          <circle cx="100" cy="50" r="75" fill="none" />
-          <g>
-            <use xlinkHref="#circlePath" fill="none" />
-            <text fill="#000">
-              <textPath xlinkHref="#circlePath">
-                R.S.V.P by July 8 * * * * * * * R.S.V.P by July 8 * * * * * * *
-              </textPath>
-            </text>
-          </g>
-        </svg>
-      </Circle>
-    </Container>
+    <Circle>
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlnsXlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="150px"
+        height="150px"
+        viewBox="0 0 300 300"
+        enableBackground="new 0 0 300 300"
+        xmlSpace="preserve"
+      >
+        <defs>
+          <path
+            id="circlePath"
+            d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "
+          />
+        </defs>
+        <circle cx="100" cy="50" r="75" fill="none" />
+        <g>
+          <use xlinkHref="#circlePath" fill="none" />
+          <text fill="#000" style={{ fontWeight: "900" }}>
+            <textPath xlinkHref="#circlePath">
+              R.S.V.P by July 8 - - - - - - R.S.V.P by July 8 - - - - - - - -
+            </textPath>
+          </text>
+        </g>
+      </svg>
+    </Circle>
   );
 }

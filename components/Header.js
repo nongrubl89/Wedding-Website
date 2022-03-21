@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 const HeaderStyles = styled.div`
   display: grid;
-  grid-template-columns: 85% 5% 5% 5%;
-  grid-gap: 1em;
-  margin-left: 4rem;
-  margin-right: 4rem;
-  width: 92vw;
+  grid-template-columns: 1fr repeat(3, fit-content(50px));
+  /* margin-left: 7rem;
+  margin-right: 7rem; */
   margin-bottom: 1em;
+  grid-column-gap: 1em;
+  font-size: 1.5rem;
 
   h2 {
     font-size: 4rem;
@@ -19,12 +19,14 @@ const HeaderStyles = styled.div`
   a:hover {
     font-style: italic;
     font-weight: 900;
+    cursor: pointer;
   }
 
   a {
     align-self: center;
-    justify-self: center;
-    font-weight: 500;
+    justify-self: end;
+    font-weight: 900;
+    font-size: 1.1em;
   }
 `;
 
