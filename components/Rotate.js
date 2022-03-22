@@ -7,6 +7,11 @@ const Circle = styled.div`
   bottom: -4em;
   right: -4em;
 
+  @media (max-width: 600px) {
+    bottom: -2em;
+    right: -2em;
+  }
+
   svg {
     color: #4f6eb0;
     height: 30rem;
@@ -32,6 +37,11 @@ const Circle = styled.div`
     -ms-animation-timing-function: linear;
     -o-animation-timing-function: linear;
     animation-timing-function: linear;
+
+    @media (max-width: 600px) {
+      height: 20rem;
+      width: 20rem;
+    }
   }
 
   @-webkit-keyframes rotate {

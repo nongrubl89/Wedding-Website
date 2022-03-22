@@ -1,44 +1,74 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const HeaderStyles = styled.div`
-  display: grid;
+const HeaderStyles = styled.nav`
+  /* display: grid;
   grid-template-columns: 1fr repeat(3, fit-content(50px));
-  /* margin-left: 7rem;
-  margin-right: 7rem; */
   margin-bottom: 1em;
   grid-column-gap: 1em;
-  font-size: 1.5rem;
+  font-size: 1.5rem; */
 
-  h2 {
-    font-size: 4rem;
-    align-self: center;
-  }
+  ul {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.75rem;
+    padding-left: 2em;
+    padding-right: 2em;
+    /* font-weight: 900; */
 
-  h2:hover,
-  a:hover {
-    font-style: italic;
-    font-weight: 900;
-    cursor: pointer;
-  }
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr repeat(3, fit-content(75px));
+      grid-gap: 20px;
+      justify-items: end;
+    }
 
-  a {
-    align-self: center;
-    justify-self: end;
-    font-weight: 900;
-    font-size: 1.1em;
+    @media (max-width: 600px) {
+      padding-bottom: 1em;
+    }
+
+    .fullWidth {
+      grid-column: 1 / 4;
+
+      @media (min-width: 600px) {
+        grid-column: 1 / 2;
+        justify-self: start;
+      }
+    }
+
+    h2 {
+      font-size: 4rem;
+      align-self: center;
+    }
+    li:hover {
+      font-style: italic;
+    }
   }
 `;
 
 export default function Header() {
   return (
     <HeaderStyles>
-      <Link href="/">
-        <h2>B&L</h2>
-      </Link>
-      <Link href="/schedule">Schedule</Link>
-      <Link href="/lodging">Lodging</Link>
-      <Link href="/respondezsvp">RSVP</Link>
+      <ul>
+        <li className="fullWidth">
+          <Link href="/">
+            <h2>B&L</h2>
+          </Link>
+        </li>
+        <li className="links">
+          <Link href="/schedule">Schedule</Link>
+        </li>
+        <li className="links">
+          <Link href="/lodging">Lodging</Link>
+        </li>
+        <li className="links">
+          <Link href="/respondezsvp">RSVP</Link>
+        </li>
+      </ul>
     </HeaderStyles>
   );
 }
